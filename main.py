@@ -37,7 +37,6 @@ def walk_through_dir():
                             timestamp_destination = os.path.getmtime(file_destination)
 
                             if timestamp_destination > timestamp_source:
-                                print(f'Cannot make changes to "{filename}" because file is ahead in time!')
                                 continue
                             else:
                                 os.remove(file_destination)
