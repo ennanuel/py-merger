@@ -17,7 +17,7 @@ def walk_through_dir():
     forbidden_files = os.environ.get("FILES_TO_SKIP_REGEX")
 
     try:
-        if os.path.exists(source_dir): raise Exception("Source folder doesn't exist")
+        if not os.path.exists(source_dir): raise Exception("Source folder doesn't exist")
             
         for root, directories, files in os.walk(source_dir):
             if re.search(forbidden_folders, root):
